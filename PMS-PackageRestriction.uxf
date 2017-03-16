@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>680</x>
+      <y>272</y>
+      <w>280</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PackageUserState
+--
+boolean stopped
+boolean notLaunched
+boolean installed
+boolean hidden
+int enabled
+boolean blockUninstall
+ArraySet&lt;String&gt; disabledComponents
+ArraySet&lt;String&gt; enabledComponents
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>224</x>
+      <y>232</y>
+      <w>280</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>PackageSettingBase
+--
+PackageUserState DEFAULT_USER_STATE
+SparseArray&lt;PackageUserState&gt; userState
+--
+PackageUserState modifyUserState(int userId)
+PackageUserState readUserState(int userId)
+setEnabled(int state, int userId, String callingPackage)
+int getEnabled(int userId)
+String getLastDisabledAppCaller(int userId)
+setInstalled(boolean inst, int userId)
+boolean getInstalled(int userId)
+boolean isAnyInstalled(int[] users)
+int[] queryInstalledUsers(int[] users, boolean installed)
+boolean getStopped(int userId)
+ArraySet&lt;String&gt; getEnabledComponents(int userId)
+void setEnabledComponents(ArraySet&lt;String&gt; components, int userId)
+void setDisabledComponents(ArraySet&lt;String&gt; components, int userId)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>224</x>
+      <y>552</y>
+      <w>280</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>PackageSetting
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>328</x>
+      <y>448</y>
+      <w>40</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;104;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>224</x>
+      <y>112</y>
+      <w>280</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>SettingBase
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>328</x>
+      <y>152</y>
+      <w>40</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;80;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>320</y>
+      <w>216</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;200;24</additional_attributes>
+  </element>
+</diagram>
